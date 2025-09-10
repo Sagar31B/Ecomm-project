@@ -19,3 +19,6 @@ jobs:
 
       - name: Build with maven
         run: mvn -B package --file pom.xml
+      - name: deploy to tomcat
+        run: curl -v -u admin:admin -T /home/runner/work/Ecomm-project/Ecomm-project/target/Ecomm.war 'http://13.235.9.56:8080/manager/text/deploy?path=/Ecomm.war'
+
